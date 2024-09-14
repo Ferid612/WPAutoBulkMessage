@@ -1,0 +1,1 @@
+Şərhləri oxumağı ehmal etmətin. 
