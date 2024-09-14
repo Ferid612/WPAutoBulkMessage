@@ -1,0 +1,88 @@
+[
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "webdriver",
+        "importPath": "selenium",
+        "description": "selenium",
+        "isExtraImport": true,
+        "detail": "selenium",
+        "documentation": {}
+    },
+    {
+        "label": "By",
+        "importPath": "selenium.webdriver.common.by",
+        "description": "selenium.webdriver.common.by",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.common.by",
+        "documentation": {}
+    },
+    {
+        "label": "WebDriverWait",
+        "importPath": "selenium.webdriver.support.ui",
+        "description": "selenium.webdriver.support.ui",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support.ui",
+        "documentation": {}
+    },
+    {
+        "label": "expected_conditions",
+        "importPath": "selenium.webdriver.support",
+        "description": "selenium.webdriver.support",
+        "isExtraImport": true,
+        "detail": "selenium.webdriver.support",
+        "documentation": {}
+    },
+    {
+        "label": "chrome_profile_path",
+        "kind": 5,
+        "importPath": "autoWp",
+        "description": "autoWp",
+        "peekOfCode": "chrome_profile_path = \"/home/giganet/.config/google-chrome/Default/\" \noptions = webdriver.ChromeOptions()\noptions.add_argument(f\"user-data-dir={chrome_profile_path}\")\ndriver = webdriver.Chrome(options=options)\n# options.add_argument(\"--no-sandbox\") #! Arxa fonda çalışmasını istəyirsizsə komentdən çıxarın   \n# options.add_argument(\"--headless\") #! Arxa fonda çalışmasını istəyirsizsə komentdən çıxarın\n#! Bir dəfə eləmək kifayətdir. Növbəti dəfə run etdikdə 2 sətri komentə alın\ndriver.get('https://web.whatsapp.com')\ninput(\"WhatsApp Web'e giriş yapın ve devam etmek için Enter'a basın...\")\nnumbers = [\"994703335610\", \"994507737203\", \"5560771112\"] #Nömrələr",
+        "detail": "autoWp",
+        "documentation": {}
+    },
+    {
+        "label": "options",
+        "kind": 5,
+        "importPath": "autoWp",
+        "description": "autoWp",
+        "peekOfCode": "options = webdriver.ChromeOptions()\noptions.add_argument(f\"user-data-dir={chrome_profile_path}\")\ndriver = webdriver.Chrome(options=options)\n# options.add_argument(\"--no-sandbox\") #! Arxa fonda çalışmasını istəyirsizsə komentdən çıxarın   \n# options.add_argument(\"--headless\") #! Arxa fonda çalışmasını istəyirsizsə komentdən çıxarın\n#! Bir dəfə eləmək kifayətdir. Növbəti dəfə run etdikdə 2 sətri komentə alın\ndriver.get('https://web.whatsapp.com')\ninput(\"WhatsApp Web'e giriş yapın ve devam etmek için Enter'a basın...\")\nnumbers = [\"994703335610\", \"994507737203\", \"5560771112\"] #Nömrələr\nmessages = [\"Sən də qaqaş!\", \"Mən də qaqaş!\"]",
+        "detail": "autoWp",
+        "documentation": {}
+    },
+    {
+        "label": "driver",
+        "kind": 5,
+        "importPath": "autoWp",
+        "description": "autoWp",
+        "peekOfCode": "driver = webdriver.Chrome(options=options)\n# options.add_argument(\"--no-sandbox\") #! Arxa fonda çalışmasını istəyirsizsə komentdən çıxarın   \n# options.add_argument(\"--headless\") #! Arxa fonda çalışmasını istəyirsizsə komentdən çıxarın\n#! Bir dəfə eləmək kifayətdir. Növbəti dəfə run etdikdə 2 sətri komentə alın\ndriver.get('https://web.whatsapp.com')\ninput(\"WhatsApp Web'e giriş yapın ve devam etmek için Enter'a basın...\")\nnumbers = [\"994703335610\", \"994507737203\", \"5560771112\"] #Nömrələr\nmessages = [\"Sən də qaqaş!\", \"Mən də qaqaş!\"]\nfor number in numbers:\n    url = f\"https://web.whatsapp.com/send?phone={number}&text={messages[0]}\"",
+        "detail": "autoWp",
+        "documentation": {}
+    },
+    {
+        "label": "numbers",
+        "kind": 5,
+        "importPath": "autoWp",
+        "description": "autoWp",
+        "peekOfCode": "numbers = [\"994703335610\", \"994507737203\", \"5560771112\"] #Nömrələr\nmessages = [\"Sən də qaqaş!\", \"Mən də qaqaş!\"]\nfor number in numbers:\n    url = f\"https://web.whatsapp.com/send?phone={number}&text={messages[0]}\"\n    driver.get(url)\n    time.sleep(30)  # Həm səhifənin yüklənməsi üçün həm də bloka düşməmək üçün\n    try:\n        # messages[0] mesajı ilə dinamic html`də text inputunu tapırıq\n        message_box = WebDriverWait(driver, 15).until(\n            EC.presence_of_element_located((By.XPATH, f'//div[@contenteditable=\"true\" and contains(., \"{messages[0]}\")]'))",
+        "detail": "autoWp",
+        "documentation": {}
+    },
+    {
+        "label": "messages",
+        "kind": 5,
+        "importPath": "autoWp",
+        "description": "autoWp",
+        "peekOfCode": "messages = [\"Sən də qaqaş!\", \"Mən də qaqaş!\"]\nfor number in numbers:\n    url = f\"https://web.whatsapp.com/send?phone={number}&text={messages[0]}\"\n    driver.get(url)\n    time.sleep(30)  # Həm səhifənin yüklənməsi üçün həm də bloka düşməmək üçün\n    try:\n        # messages[0] mesajı ilə dinamic html`də text inputunu tapırıq\n        message_box = WebDriverWait(driver, 15).until(\n            EC.presence_of_element_located((By.XPATH, f'//div[@contenteditable=\"true\" and contains(., \"{messages[0]}\")]'))\n        )",
+        "detail": "autoWp",
+        "documentation": {}
+    }
+]
