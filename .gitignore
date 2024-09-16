@@ -1,0 +1,7 @@
+venv/
+Deaktivler.csv
+Deaktivler2.csv
+gonderildi.csv
+*.pyc
+Documents/Logs/Text_Files/TV/Error_Phone.txt
+Documents/Logs/Text_Files/TV/Success_phone.txt
